@@ -298,6 +298,12 @@ function barList(el, rows, total, colorFn, unit){
     <div class="track"><div class="fill" style="width:${Math.max(0,r.v/max*100)}%;background:${colorFn(r.k)}"></div></div>
     <div class="x">${r.v<0?`${r.n} ${r.n===1?"refund":"refunds"} · deducted from total`:`${r.c} ${r.c===1?unit:unit+"s"} · ${total?Math.round(r.v/total*100):0}% of total`}</div></div>`).join("");
 }
+// keep every visible practice area in the list, with $0 rows for areas that have no activity this month
+function withZeros(rows){
+  const out=[...rows];
+  DATA.areas.filter(a=>active.has(a)&&!out.some(r=>r.k===a)).forEach(a=>out.push({k:a,v:0,c:0,n:0}));
+  return out;
+}
 function group(rows, key){
   const m={}; rows.forEach(p=>{ const k=p[key]; m[k]=m[k]||{k,v:0,c:0,n:0}; m[k].v+=p.amt; m[k].n++; if(p.amt>0) m[k].c++; });
   return Object.values(m).sort((a,b)=>b.v-a.v);
@@ -349,7 +355,7 @@ function render(){
   const other=callDays.reduce((s,d)=>s+Object.entries(DATA.calls[d]).filter(([k])=>k!=="Inbound").reduce((a,[,v])=>a+v,0),0);
   document.getElementById("callMeta").textContent = other?`${other} outbound / other calls not shown`:"Outbound, toll free and international were zero all month";
 
-  barList(document.getElementById("byArea"), group(P,"a"), net, k=>`var(${COLORS[DATA.areas.indexOf(k)]})`, "payment");
+  barList(document.getElementById("byArea"), withZeros(group(P,"a")), net, k=>`var(${COLORS[DATA.areas.indexOf(k)]})`, "payment");
 
   // cumulative charts, plotted only through each source's latest day
   const payIdx=days.indexOf(lastPay), callIdx=days.indexOf(lastCall);
