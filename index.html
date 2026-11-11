@@ -167,9 +167,9 @@ let days=[], first="", last="", lastPay="", callDays=[], lastCall, monthName="";
 function monthInfo(ym){
   const pd=ALL_PAYMENTS.filter(p=>p.d.slice(0,7)===ym).map(p=>p.d).sort();
   const cd=Object.keys(ALL_CALLS).filter(d=>d.slice(0,7)===ym).sort();
-  const all=[...pd,...cd].sort(), lastD=all[all.length-1], firstD=ym+"-01", ds=[];
+  const pt=(DATA.paymentsThrough||"").slice(0,7)===ym?DATA.paymentsThrough:null, all=[...pd,...cd,...(pt?[pt]:[])].sort(), lastD=all[all.length-1], firstD=ym+"-01", ds=[];
   for (let d=new Date(firstD+"T12:00:00"); d<=new Date(lastD+"T12:00:00"); d.setDate(d.getDate()+1)) ds.push(d.toISOString().slice(0,10));
-  return {first:firstD,last:lastD,days:ds,lastPay:pd.length?pd[pd.length-1]:firstD,callDays:cd,lastCall:cd[cd.length-1]};
+  return {first:firstD,last:lastD,days:ds,lastPay:[...pd,...(pt?[pt]:[])].sort().pop()||firstD,callDays:cd,lastCall:cd[cd.length-1]};
 }
 // totals for one month through day N (same-length comparison), respecting the practice-area filter
 function metrics(ym,N){

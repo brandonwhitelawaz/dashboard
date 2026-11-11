@@ -1,5 +1,6 @@
 {
-"built":"2026-11-09T23:58Z",
+"built":"2026-11-11T00:02Z",
+"paymentsThrough":"2026-11-10",
 "areas":["Criminal", "Personal Injury", "Estate Planning", "Civil Litigation"],
 "payments":[
  {"d":"2026-10-01","a":"Criminal","amt":500.0},
@@ -169,6 +170,7 @@
  "2026-11-06":{"Inbound":36},
  "2026-11-07":{"Inbound":7},
  "2026-11-08":{"Inbound":2},
- "2026-11-09":{"Inbound":34}
+ "2026-11-09":{"Inbound":34},
+ "2026-11-10":{"Inbound":48}
 }
 }
