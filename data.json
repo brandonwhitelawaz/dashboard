@@ -1,5 +1,5 @@
 {
-"built":"2026-11-12T23:41Z",
+"built":"2026-11-12T23:44Z",
 "paymentsThrough":"2026-11-12",
 "areas":["Criminal", "Personal Injury", "Estate Planning", "Civil Litigation"],
 "payments":[
@@ -130,8 +130,15 @@
  {"d":"2026-11-09","a":"Personal Injury","amt":21994.19},
  {"d":"2026-11-09","a":"Personal Injury","amt":401.12},
  {"d":"2026-11-11","a":"Criminal","amt":1000.0},
- {"d":"2026-11-12","a":"Criminal","amt":2550.0},
- {"d":"2026-11-12","a":"Estate Planning","amt":8065.12}
+ {"d":"2026-11-12","a":"Criminal","amt":2000.0},
+ {"d":"2026-11-12","a":"Criminal","amt":550.0},
+ {"d":"2026-11-12","a":"Estate Planning","amt":400.0},
+ {"d":"2026-11-12","a":"Estate Planning","amt":22.5},
+ {"d":"2026-11-12","a":"Estate Planning","amt":422.5},
+ {"d":"2026-11-12","a":"Estate Planning","amt":1360.0},
+ {"d":"2026-11-12","a":"Estate Planning","amt":200.0},
+ {"d":"2026-11-12","a":"Estate Planning","amt":690.0},
+ {"d":"2026-11-12","a":"Estate Planning","amt":4970.12}
 ],
 "calls":{
  "2026-10-01":{"Inbound":38,"Outbound":0,"Toll free":0,"International":0},
