@@ -1,6 +1,6 @@
 {
-"built":"2026-11-18T23:33Z",
-"paymentsThrough":"2026-11-17",
+"built":"2026-11-18T23:35Z",
+"paymentsThrough":"2026-11-18",
 "areas":["Criminal", "Personal Injury", "Estate Planning", "Civil Litigation"],
 "payments":[
  {"d":"2026-10-01","a":"Criminal","amt":500.0},
@@ -147,7 +147,9 @@
  {"d":"2026-11-17","a":"Criminal","amt":2000.0},
  {"d":"2026-11-17","a":"Criminal","amt":600.0},
  {"d":"2026-11-17","a":"Criminal","amt":1100.0},
- {"d":"2026-11-17","a":"Criminal","amt":1500.0}
+ {"d":"2026-11-17","a":"Criminal","amt":1500.0},
+ {"d":"2026-11-18","a":"Criminal","amt":400.0},
+ {"d":"2026-11-18","a":"Criminal","amt":400.0}
 ],
 "calls":{
  "2026-10-01":{"Inbound":38,"Outbound":0,"Toll free":0,"International":0},
@@ -195,6 +197,7 @@
  "2026-11-12":{"Inbound":27},
  "2026-11-13":{"Inbound":28},
  "2026-11-16":{"Inbound":43},
- "2026-11-17":{"Inbound":48}
+ "2026-11-17":{"Inbound":48},
+ "2026-11-18":{"Inbound":22}
 }
 }
